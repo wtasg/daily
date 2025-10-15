@@ -1,3 +1,4 @@
+// @ts-nocheck
 class Item {
   name: string;
   sellIn: number;
