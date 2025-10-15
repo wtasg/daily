@@ -21,13 +21,12 @@ export class GildedRose {
     updateQuality() {
         for (let i = 0; i < this.items.length; i++) {
             switch (this.items[i].name) {
-                case "Aged Brie": { }
-                case "Backstage passes to a TAFKAL80ETC concert": { }
-                case "Sulfuras, Hand of Ragnaros": { }
+                case "Aged Brie": { } break;
+                case "Backstage passes to a TAFKAL80ETC concert": { } break;
+                case "Sulfuras, Hand of Ragnaros": { } break;
                 default: {
-                    // if (this.items[i].quality > 0) {
-                    //     this.items[i].quality--;
-                    // }
+                        this.items[i].quality = Math.max(0, this.items[i].quality - 1);
+                        break;
                 }
             }
 
@@ -38,8 +37,9 @@ export class GildedRose {
                 this.items[i].name != "Sulfuras, Hand of Ragnaros" &&
                 this.items[i].quality > 0
             ) {
-                this.items[i].quality = this.items[i].quality - 1;
+                // this.items[i].quality = this.items[i].quality - 1;
             }
+
             // created new block...
             if (this.items[i].name === "Aged Brie" ||
                 this.items[i].name === "Backstage passes to a TAFKAL80ETC concert") {
