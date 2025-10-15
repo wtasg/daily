@@ -42,7 +42,11 @@ export class GildedRose {
     updateQuality() {
         for (let i = 0; i < this.items.length; i++) {
             switch (this.items[i].name) {
-                case "Aged Brie": { } break;
+                case "Aged Brie": {
+                    if (this.items[i].quality < 50) {
+                        this.items[i].quality = this.items[i].quality + 1;
+                    }
+                } break;
                 case "Backstage passes to a TAFKAL80ETC concert": { } break;
                 case "Sulfuras, Hand of Ragnaros": { } break;
                 default: {
@@ -50,12 +54,6 @@ export class GildedRose {
                     break;
                 }
             }
-
-            // Block for Aged Brie
-            if (this.items[i].name === "Aged Brie" && this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
-            }
-
             // created new block...
             if (this.items[i].name === "Backstage passes to a TAFKAL80ETC concert") {
                 if (this.items[i].quality < 50) {
