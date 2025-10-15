@@ -1,5 +1,5 @@
 // @ts-nocheck
-class Item {
+export class Item {
   name: string;
   sellIn: number;
   quality: number;
@@ -11,7 +11,7 @@ class Item {
   }
 }
 
-class GildedRose {
+export class GildedRose {
   items: Array<Item>;
 
   constructor(items = [] as Array<Item>) {
